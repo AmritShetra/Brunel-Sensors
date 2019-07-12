@@ -26,9 +26,7 @@ while True:
         print ("Sound sensor value = %d" %sensor_value)
         
         if distance_value < 500:
-            room_occupied = True
-        else:
-            room_occupied = False
+            room_occupied = not room_occupied
         
         if room_occupied:
             grovepi.digitalWrite(red_led, 1)
