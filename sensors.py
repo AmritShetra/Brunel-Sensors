@@ -50,5 +50,11 @@ while program_active:
         
         time.sleep(0.5)
         
+        if keyboard.is_pressed("C"):
+            program_active = False
+
     except IOError:
         print ("Error")
+
+print("Program terminated")
+print(datetimes_when_occupied)
