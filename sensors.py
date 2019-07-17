@@ -20,6 +20,18 @@ room_occupied = False
 printed = False # Check if datetime already printed while occupied
 datetimes_when_occupied = []
 
+def add_datetimes_to_list():
+    ''' Adds the date and time when the room is occupied to a
+        dictionary, which is added to a list containing each dictionary. '''
+    now = datetime.now()
+    print(now)
+    d = {}
+    d['time'] = now.time()
+    d['day'] = now.strftime("%A")
+    d['date'] = now.strftime("%d")
+    d['month'] = now.strftime("%B")
+    datetimes_when_occupied.append(d)
+
 while program_active:
     try:
         # Read the sound level
@@ -39,11 +51,8 @@ while program_active:
             grovepi.digitalWrite(red_led, 1)
             print ("Room is occupied")
             if printed == False:
-                now = datetime.now().time()
-                print(now)
-                datetimes_when_occupied.append(now)
+                add_datetimes_to_list()
                 printed = True
-
         else:
             grovepi.digitalWrite(red_led, 0)
             printed = False
@@ -56,5 +65,12 @@ while program_active:
     except IOError:
         print ("Error")
 
+# Exit the loop when prompted by the user
 print("Program terminated")
-print(datetimes_when_occupied)
+
+# Print the contents of each dictionary from the list
+for datetimes in datetimes_when_occupied:
+    print(datetimes['time'])
+    print(datetimes['day'])
+    print(datetimes['date'])
+    print(datetimes['month'])
