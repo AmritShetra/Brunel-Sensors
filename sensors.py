@@ -4,8 +4,11 @@ import time
 import grovepi
 import numpy as np
 import matplotlib as plt
-from datetime import datetime
 import keyboard
+
+# Import other Python files
+import data
+import utilities as utils
 
 # Connections
 sound_sensor = 0 # Port A0
@@ -19,18 +22,6 @@ program_active = True
 room_occupied = False
 printed = False # Check if datetime already printed while occupied
 datetimes_when_occupied = []
-
-def add_datetimes_to_list():
-    ''' Adds the date and time when the room is occupied to a
-        dictionary, which is added to a list containing each dictionary. '''
-    now = datetime.now()
-    print(now)
-    d = {}
-    d['time'] = now.time()
-    d['day'] = now.strftime("%A")
-    d['date'] = now.strftime("%d")
-    d['month'] = now.strftime("%B")
-    datetimes_when_occupied.append(d)
 
 while program_active:
     try:
@@ -51,7 +42,7 @@ while program_active:
             grovepi.digitalWrite(red_led, 1)
             print ("Room is occupied")
             if printed == False:
-                add_datetimes_to_list()
+                utils.add_datetimes_to_list(datetimes_when_occupied)
                 printed = True
         else:
             grovepi.digitalWrite(red_led, 0)
@@ -67,10 +58,4 @@ while program_active:
 
 # Exit the loop when prompted by the user
 print("Program terminated")
-
-# Print the contents of each dictionary from the list
-for datetimes in datetimes_when_occupied:
-    print(datetimes['time'])
-    print(datetimes['day'])
-    print(datetimes['date'])
-    print(datetimes['month'])
+utils.print_list(datetimes_when_occupied)
