@@ -2,8 +2,6 @@
 
 import time
 import grovepi
-import numpy as np
-import matplotlib as plt
 import keyboard
 
 # Import other Python files
