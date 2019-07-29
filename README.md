@@ -5,7 +5,11 @@ Prior to this project, I had no experience using a Pi and my Python knowledge wa
 
 A couple of the sensors that I planned on using (Sound, etc.) did not function well, so I used one that did (Ultrasonic Ranger). This led to me designing a system that tracks when people walk past the sensor (so they have either entered or left the room) and trying to track statistics, which can then be put into a graph.
 
-I encountered many issues regarding the installation of OpenCV on the Pi, usually resulting in the Pi freezing. Eventually, I was able to get it installed, using the guide linked below. This, however, meant that I lost all files on the Pi and essentially had it reset. Thanks to the powers of git, I cloned this repo and was free to continue working - hopefully, this time being able to use the Camera module in my work. However, installing the software for the GrovePi+ sensors proved to be difficult and I once again faced issues. Currently, the code should work *but doesn't* - but the Camera is functional...
+I encountered many issues regarding the installation of OpenCV on the Pi, usually resulting in the Pi freezing. Eventually, I was able to get it installed, using the guide linked below. 
+
+This, however, meant that I lost all files on the Pi and essentially had it reset. Thanks to the powers of git, I cloned this repo and was free to continue working - hopefully, this time being able to use the Camera module in my work. 
+
+However, installing the software for the GrovePi+ sensors proved to be difficult and I once again faced issues. Currently, the code should work *but doesn't* - but the Camera is functional...
 
 ### Requirements
 * Raspberry Pi (I've used the 3B, but anything should work)
@@ -17,6 +21,8 @@ I encountered many issues regarding the installation of OpenCV on the Pi, usuall
 * I've used [this guide](https://rsjazz.wordpress.com/2016/06/01/raspberry-pi-unleashed-setup-the-grovepi/) to download the necessary software and drivers, so that it can use the GrovePi+ sensors.
 * Use the command "curl -kL dexterindustries.com/update_grovepi | bash" to update the software.
 * Use the command "pip install -r requirements.txt" to install the packages used in the project.
+* When I installed packages, I usually had to use "sudo python -m pip install ___ " with __ being the package name.
+* In the case of "matplotlib", there was a "MemoryError" which meant I had to use the command "sudo python -m pip --no-cache-dir install matplotlib".
 
 ### Using the project
 * Each time you open a new terminal window, you should need to type "source ~/.profile" and "workon py3cv3" to access the virtual environment that holds Python3 and OpenCV - this is also mentioned in the first guide linked above!
