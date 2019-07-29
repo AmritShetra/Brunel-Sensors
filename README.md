@@ -11,8 +11,12 @@ I encountered many issues regarding the installation of OpenCV on the Pi, usuall
 * Raspberry Pi (I've used the 3B, but anything should work)
 * GrovePi+ sensors (I've used the Starter Kit for Raspberry Pi)
 * Pi Camera module
+
+### Setup
 * [This guide](https://www.pyimagesearch.com/2016/11/21/raspbian-opencv-pre-configured-and-pre-installed/) was used to set up the Raspberry Pi so that it already has Python 3 and OpenCV installed.
 * I've used [this guide](https://rsjazz.wordpress.com/2016/06/01/raspberry-pi-unleashed-setup-the-grovepi/) to download the necessary software and drivers, so that it can use the GrovePi+ sensors.
+* Use the command "curl -kL dexterindustries.com/update_grovepi | bash" to update the software.
+* Use the command "pip install -r requirements.txt" to install the packages used in the project.
 
 ### Using the project
 * Each time you open a new terminal window, you should need to type "source ~/.profile" and "workon py3cv3" to access the virtual environment that holds Python3 and OpenCV - this is also mentioned in the first guide linked above!
