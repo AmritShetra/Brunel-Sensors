@@ -7,9 +7,7 @@ A couple of the sensors that I planned on using (Sound, etc.) did not function w
 
 I encountered many issues regarding the installation of OpenCV on the Pi, usually resulting in the Pi freezing. Eventually, I was able to get it installed, using the guide linked below. 
 
-This, however, meant that I lost all files on the Pi and essentially had it reset. Thanks to the powers of git, I cloned this repo and was free to continue working - hopefully, this time being able to use the Camera module in my work. 
-
-However, installing the software for the GrovePi+ sensors proved to be difficult and I once again faced issues. Currently, the code should work *but doesn't* - but the Camera is functional...
+This, however, meant that I lost all files on the Pi and essentially had it reset. Thanks to the powers of git, I cloned this repo and was free to continue working - hopefully, this time being able to use the Camera module in my work. Once again, I encountered errors with installing the necessary libraries (hopefully this is fixed by the presence of the "requirements.txt" file), and the sensors.py code seems to just malfunction.
 
 ### Requirements
 * Raspberry Pi (I've used the 3B, but anything should work)
