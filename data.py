@@ -56,8 +56,12 @@ def example_method():    # Example usage of methods, with provided data
     print(labels)
     sizes = total_minutes
     print(sizes)
+    explode = (0, 0, 0, 0.1, 0)
     
     fig, ax = plt.subplots()
-    ax.pie(sizes, labels=labels, autopct='%.1f%%')
+    ax.pie(sizes, labels=labels, autopct='%.1f%%', shadow=True, explode=explode)
     ax.set_aspect('equal')
+    plt.title("The usage of the meeting rooms across the week")
     plt.show()
+
+example_method()
