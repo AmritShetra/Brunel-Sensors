@@ -23,15 +23,11 @@ datetimes_when_occupied = []
 
 while program_active:
     try:
-        # Read the sound level
-        sensor_value = grovepi.analogRead(sound_sensor)
-        
         # Read the distance
         distance_value = grovepi.ultrasonicRead(ultrasonic_ranger)
         
         # Printing values, mainly for testing purposes
         print (distance_value)
-        print ("Sound sensor value = %d" %sensor_value)
         
         if distance_value < 500:
             room_occupied = not room_occupied

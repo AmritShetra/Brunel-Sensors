@@ -28,27 +28,26 @@ def describe_data(data):
     print("Minimum:", np.min(data))
     print("Maximum:", np.max(data))
 
+def example_method():    # Example usage of methods, with provided data
+    data = [
+        {"day": "Monday", "occupied": 20},
+        {"day": "Tuesday", "occupied": 35},
+        {"day": "Wednesday", "occupied": 12},
+        {"day": "Thursday", "occupied": 17},
+        {"day": "Thursday", "occupied": 18},
+        {"day": "Thursday", "occupied": 30},
+        {"day": "Friday", "occupied": 11}
+        ]
 
-# Example usage of methods, with provided data
-data = [
-    {"day": "Monday", "occupied": 20},
-    {"day": "Tuesday", "occupied": 35},
-    {"day": "Wednesday", "occupied": 12},
-    {"day": "Thursday", "occupied": 17},
-    {"day": "Thursday", "occupied": 18},
-    {"day": "Thursday", "occupied": 30},
-    {"day": "Friday", "occupied": 11}
-    ]
-
-# Group the data according to the "day" key, which returns several lists
-grouped_data = group_data(data, "day")
-print(grouped_data["Thursday"])
-print(grouped_data["Friday"])
-# Calculate sum of each day/list's values
-total_minutes_by_day = sum_grouped_data(grouped_data, "occupied")
-print(total_minutes_by_day)
-# Get mean, std, min and max from the above list
-total_minutes = list(total_minutes_by_day.values())
-describe_data(total_minutes)
-plt.hist(total_minutes_by_day.values(), bins = 3)
-plt.show()
+    # Group the data according to the "day" key, which returns several lists
+    grouped_data = group_data(data, "day")
+    print(grouped_data["Thursday"])
+    print(grouped_data["Friday"])
+    # Calculate sum of each day/list's values
+    total_minutes_by_day = sum_grouped_data(grouped_data, "occupied")
+    print(total_minutes_by_day)
+    # Get mean, std, min and max from the above list
+    total_minutes = list(total_minutes_by_day.values())
+    describe_data(total_minutes)
+    plt.hist(total_minutes_by_day.values(), bins = 3)
+    plt.show()
