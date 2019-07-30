@@ -1,6 +1,7 @@
 ## Brunel Sensors
 This is a project that uses a Raspberry Pi and GrovePi+ sensors to analyse user behaviour patterns in meeting rooms. The project was created by myself, Amrit Shetra, during a research internship that took place in July, at Brunel University London, supervised by Dr. Stasha Lauria.
-  
+
+### Timeline
 Prior to this project, I had no experience using a Pi and my Python knowledge was basic. During the project, I experienced many unexpected issues which meant that I constantly had to change my plan for what the code would do. Firstly, there were setbacks regarding the Camera module - the original one supplied to me did not work, meaning that I had to code using the sensors until I received a replacement. 
 
 A couple of the sensors that I planned on using (Sound, etc.) did not function well, so I used one that did (Ultrasonic Ranger). This led to me designing a system that tracks when people walk past the sensor (so they have either entered or left the room) and trying to track statistics, which can then be put into a graph.
@@ -8,6 +9,8 @@ A couple of the sensors that I planned on using (Sound, etc.) did not function w
 I encountered many issues regarding the installation of OpenCV on the Pi, usually resulting in the Pi freezing. Eventually, I was able to get it installed, using the guide linked below. 
 
 This, however, meant that I lost all files on the Pi and essentially had it reset. Thanks to the powers of git, I cloned this repo and was free to continue working - hopefully, this time being able to use the Camera module in my work. Once again, I encountered errors with installing the necessary libraries (hopefully this is fixed by the presence of the "requirements.txt" file), and the sensors.py code seems to just malfunction.
+
+I've used [this guide](https://www.pyimagesearch.com/2017/10/16/raspberry-pi-deep-learning-object-detection-with-opencv/) to get code that can detect objects through the Pi camera. It runs very slowly on the Pi, to the point of not really being too useful.
 
 ### Requirements
 * Raspberry Pi (I've used the 3B, but anything should work)
@@ -22,9 +25,15 @@ This, however, meant that I lost all files on the Pi and essentially had it rese
 * When I installed packages, I usually had to use "sudo python -m pip install ___ " with __ being the package name.
 * In the case of "matplotlib", there was a "MemoryError" which meant I had to use the command "sudo python -m pip --no-cache-dir install matplotlib".
 
+### Files
+* The 'main' file is designed to be sensors.py which can detect if there is movement in front of the GrovePi+'s Ultrasonic Ranger.
+* This calls code from data.py and utilities.py. Data.py contains some sample code that shows how its methods can be easily used to create graphs.
+* Camera.py can be used to test that the camera works - it will take a photo and can be exited through a key press.
+* Real_time_object_detection.py contains the code for, well, detecting objects.
+
 ### Using the project
 * Each time you open a new terminal window, you should need to type "source ~/.profile" and "workon py3cv3" to access the virtual environment that holds Python3 and OpenCV - this is also mentioned in the first guide linked above!
-* Linux command "sudo nano sensors.py" to edit the main file. Or if you'd like a GUI, try out "sudo thonny sensors.py".
-* Note that you might need to add the relevant write permission using "sudo chmod a+w sensors.py".
+* Linux command "sudo nano ______.py" to edit a file. Or if you'd like a GUI, try out "sudo thonny ______.py".
+* Note that you might need to add the relevant write permission using "sudo chmod a+w ______.py".
 * Linux command "sudo python sensors.py" to execute the main file's code - 'sudo' required as keyboard requires root privileges.
 * Ctrl + C will trigger a 'KeyboardInterrupt' to stop the program once it is in operation.
