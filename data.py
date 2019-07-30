@@ -1,7 +1,6 @@
 from collections import defaultdict
 import numpy as np
 import matplotlib.pyplot as plt
-import seaborn as sns
 
 def group_data(data, key_name):
     ''' Group data (input) according to a certain key (input). '''
@@ -49,5 +48,16 @@ def example_method():    # Example usage of methods, with provided data
     # Get mean, std, min and max from the above list
     total_minutes = list(total_minutes_by_day.values())
     describe_data(total_minutes)
-    plt.hist(total_minutes_by_day.values(), bins = 3)
+    plt.hist(total_minutes, bins = 3)
+    plt.show()
+    
+    # Pie chart
+    labels = list(total_minutes_by_day.keys())
+    print(labels)
+    sizes = total_minutes
+    print(sizes)
+    
+    fig, ax = plt.subplots()
+    ax.pie(sizes, labels=labels, autopct='%.1f%%')
+    ax.set_aspect('equal')
     plt.show()
