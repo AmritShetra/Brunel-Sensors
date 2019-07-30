@@ -10,7 +10,9 @@ I encountered many issues regarding the installation of OpenCV on the Pi, usuall
 
 This, however, meant that I lost all files on the Pi and essentially had it reset. Thanks to the powers of git, I cloned this repo and was free to continue working - hopefully, this time being able to use the Camera module in my work. Once again, I encountered errors with installing the necessary libraries (hopefully this is fixed by the presence of the "requirements.txt" file), and the sensors.py code seems to just malfunction.
 
-I've used [this guide](https://www.pyimagesearch.com/2017/10/16/raspberry-pi-deep-learning-object-detection-with-opencv/) to get code that can detect objects through the Pi camera. It runs very slowly on the Pi, to the point of not really being too useful.
+I've used [this guide](https://www.pyimagesearch.com/2017/10/16/raspberry-pi-deep-learning-object-detection-with-opencv/) to get code that can detect objects through the Pi camera. It runs very slowly on the Pi, and eventually seems to overheat. It's able to accurately detect people, although it sometimes seems to detect sofas and bottles across the frame.
+
+After getting that to work, I fixed sensors.py and data.py so that they work again, along with adding example code for making a pie chart (along with existing code I previously wrote to make a histogram) for data collected on the usage of the meeting rooms. This code works separately from the object detection code - the idea is that they could be merged so that the camera can be used to detect people, once movement is detected by the GrovePi sensor, but the sensor itself isn't the most accurate and I believe the Pi would overheat if the camera is used too much.
 
 ### Requirements
 * Raspberry Pi (I've used the 3B, but anything should work)
@@ -37,3 +39,8 @@ I've used [this guide](https://www.pyimagesearch.com/2017/10/16/raspberry-pi-dee
 * Note that you might need to add the relevant write permission using "sudo chmod a+w ______.py".
 * Linux command "sudo python sensors.py" to execute the main file's code - 'sudo' required as keyboard requires root privileges.
 * Ctrl + C will trigger a 'KeyboardInterrupt' to stop the program once it is in operation.
+* Real_time_object_detection.py can be called using "python real_time_object_detection.py --prototxt MobileNetSSD_deploy.prototxt.txt --model MobileNetSSD_deploy.caffemodel" and exited using a "q" key press.
+
+### Pie chart
+Thanks for visiting the repository - I've added a screenshot of the pie chart I created, below. This shows how the data collected on the meeting rooms can be used by the Department of Computer Science. One idea I had involves tracking usage of the rooms across Monday-Friday - in the example below, you can see that Thursday's occupancy is much higher than the other days. In particular, Wednesday and Friday. Using this, we know that students should be advised to use the rooms on such days, hopefully therefore reducing congestion.
+![Pie chart](https://i.imgur.com/Kb0AhGK.png)
