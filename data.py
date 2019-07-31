@@ -64,4 +64,4 @@ def example_method():    # Example usage of methods, with provided data
     plt.title("The usage of the meeting rooms across the week")
     plt.show()
 
-example_method()
+# example_method()

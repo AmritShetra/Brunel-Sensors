@@ -9,11 +9,9 @@ import data
 import utilities as utils
 
 # Connections
-sound_sensor = 0 # Port A0
 ultrasonic_ranger = 4 # Port D4
 red_led = 5 # Port D5
 
-grovepi.pinMode(sound_sensor, "INPUT")
 grovepi.pinMode(red_led, "OUTPUT")
 
 program_active = True
