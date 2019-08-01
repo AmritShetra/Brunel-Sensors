@@ -14,6 +14,8 @@ I've used [this guide](https://www.pyimagesearch.com/2017/10/16/raspberry-pi-dee
 
 After getting that to work, I fixed sensors.py and data.py so that they work again, along with adding example code for making a pie chart (along with existing code I previously wrote to make a histogram) for data collected on the usage of the meeting rooms. This code works separately from the object detection code - the idea is that they could be merged so that the camera can be used to detect people, once movement is detected by the GrovePi sensor, but the sensor itself isn't the most accurate and I believe the Pi would overheat if the camera is used too much.
 
+Finally, I was able to create a new file - "main.py" that combines most aspects of all the code developed, ensuring that if movement is detected, the camera is enabled and can detect people, with the occupancy data being recorded so that the user could analyse this.
+
 ### Requirements
 * Raspberry Pi (I've used the 3B, but anything should work)
 * GrovePi+ sensors (I've used the Starter Kit for Raspberry Pi)
@@ -40,6 +42,7 @@ After getting that to work, I fixed sensors.py and data.py so that they work aga
 * Linux command "sudo python sensors.py" to execute the main file's code - 'sudo' required as keyboard requires root privileges.
 * Ctrl + C will trigger a 'KeyboardInterrupt' to stop the program once it is in operation.
 * Real_time_object_detection.py can be called using "python real_time_object_detection.py --prototxt MobileNetSSD_deploy.prototxt.txt --model MobileNetSSD_deploy.caffemodel" and exited using a "q" key press.
+* The main file can be called using the above command, but with a slight change - the name of the .py file must be changed to "main".
 
 ### Pie chart
 Thanks for visiting the repository - I've added a screenshot of the pie chart I created, below. This shows how the data collected on the meeting rooms can be used by the Department of Computer Science. One idea I had involves tracking usage of the rooms across Monday-Friday - in the example below, you can see that Thursday's occupancy is much higher than the other days. In particular, Wednesday and Friday. Using this, we know that students should be advised to use the rooms on such days, hopefully therefore reducing congestion.
