@@ -30,10 +30,11 @@ Finally, I was able to create a new file - "main.py" that combines most aspects 
 * In the case of "matplotlib", there was a "MemoryError" which meant I had to use the command "sudo python -m pip --no-cache-dir install matplotlib".
 
 ### Files
-* The 'main' file is designed to be sensors.py which can detect if there is movement in front of the GrovePi+'s Ultrasonic Ranger.
+* Sensors.py can detect if there is movement in front of the GrovePi+'s Ultrasonic Ranger.
 * This calls code from data.py and utilities.py. Data.py contains some sample code that shows how its methods can be easily used to create graphs.
 * Camera.py can be used to test that the camera works - it will take a photo and can be exited through a key press.
 * Real_time_object_detection.py contains the code for, well, detecting objects.
+* The 'main' file, main.py, has been described above and combines a majority of the code developed.
 
 ### Using the project
 * Each time you open a new terminal window, you should need to type "source ~/.profile" and "workon py3cv3" to access the virtual environment that holds Python3 and OpenCV - this is also mentioned in the first guide linked above!
