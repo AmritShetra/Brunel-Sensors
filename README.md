@@ -24,10 +24,10 @@ Finally, I was able to create a new file - "main.py" that combines most aspects 
 ### Setup
 * [This guide](https://www.pyimagesearch.com/2016/11/21/raspbian-opencv-pre-configured-and-pre-installed/) was used to set up the Raspberry Pi so that it already has Python 3 and OpenCV installed.
 * I've used [this guide](https://rsjazz.wordpress.com/2016/06/01/raspberry-pi-unleashed-setup-the-grovepi/) to download the necessary software and drivers, so that it can use the GrovePi+ sensors.
-* Use the command "curl -kL dexterindustries.com/update_grovepi | bash" to update the software.
-* Use the command "pip install -r requirements.txt" to install the packages used in the project.
-* When I installed packages, I usually had to use "sudo python -m pip install ___ " with __ being the package name.
-* In the case of "matplotlib", there was a "MemoryError" which meant I had to use the command "sudo python -m pip --no-cache-dir install matplotlib".
+* Use the command ```curl -kL dexterindustries.com/update_grovepi | bash``` to update the software.
+* Use the command ```pip install -r requirements.txt``` to install the packages used in the project.
+* When I installed packages, I usually had to use ```sudo python -m pip install ___ ``` with __ being the package name.
+* In the case of "matplotlib", there was a "MemoryError" which meant I had to use the command `sudo python -m pip --no-cache-dir install matplotlib```.
 
 ### Files
 * Sensors.py can detect if there is movement in front of the GrovePi+'s Ultrasonic Ranger.
@@ -37,12 +37,12 @@ Finally, I was able to create a new file - "main.py" that combines most aspects 
 * The 'main' file, main.py, has been described above and combines a majority of the code developed.
 
 ### Using the project
-* Each time you open a new terminal window, you should need to type "source ~/.profile" and "workon py3cv3" to access the virtual environment that holds Python3 and OpenCV - this is also mentioned in the first guide linked above!
-* Linux command "sudo nano ______.py" to edit a file. Or if you'd like a GUI, try out "sudo thonny ______.py".
-* Note that you might need to add the relevant write permission using "sudo chmod a+w ______.py".
-* Linux command "sudo python sensors.py" to execute the main file's code - 'sudo' required as keyboard requires root privileges.
+* Each time you open a new terminal window, you should need to type ```source ~/.profile``` and ```workon py3cv3``` to access the virtual environment that holds Python3 and OpenCV - this is also mentioned in the first guide linked above!
+* Linux command ```sudo nano ______.py``` to edit a file. Or if you'd like a GUI, try out ```sudo thonny ______.py```.
+* Note that you might need to add the relevant write permission using ```sudo chmod a+w ______.py```.
+* Linux command ```sudo python sensors.py``` to execute the main file's code - 'sudo' required as keyboard requires root privileges.
 * Ctrl + C will trigger a 'KeyboardInterrupt' to stop the program once it is in operation.
-* Real_time_object_detection.py can be called using "python real_time_object_detection.py --prototxt MobileNetSSD_deploy.prototxt.txt --model MobileNetSSD_deploy.caffemodel" and exited using a "q" key press.
+* Real_time_object_detection.py can be called using ```python real_time_object_detection.py --prototxt MobileNetSSD_deploy.prototxt.txt --model MobileNetSSD_deploy.caffemodel``` and exited using a "q" key press.
 * The main file can be called using the above command, but with a slight change - the name of the .py file must be changed to "main".
 
 ### Pie chart
