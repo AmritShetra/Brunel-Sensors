@@ -69,7 +69,7 @@ sudo chmod a+w ______.py
 sudo python sensors.py
 ```
 * Ctrl + C will trigger a 'KeyboardInterrupt' to stop the program once it is in operation.
-* Real_time_object_detection.py can be called the following command (and exited using a "q" key press:
+* Real_time_object_detection.py can be called the following command (exit using a "q" key press):
 ```
 python real_time_object_detection.py --prototxt MobileNetSSD_deploy.prototxt.txt --model MobileNetSSD_deploy.caffemodel
 ```
