@@ -1,8 +1,8 @@
 from datetime import datetime
 
 def add_datetimes_to_list(datetimes_when_occupied):
-    ''' Adds the date and time when the room is occupied to a
-        dictionary, which is added to a list containing each dictionary. '''
+    '''Adds the date and time when the room is occupied to a
+        dictionary, which is added to a list containing each dictionary.'''
     now = datetime.now()
     print(now)
     d = {}
@@ -13,7 +13,7 @@ def add_datetimes_to_list(datetimes_when_occupied):
     datetimes_when_occupied.append(d)
 
 def print_list(datetimes_when_occupied):
-    ''' Print the contents of each dictionary from the list. '''
+    '''Print the contents of each dictionary from the list.'''
     for datetimes in datetimes_when_occupied:
         print(datetimes['time'])
         print(datetimes['day'])
